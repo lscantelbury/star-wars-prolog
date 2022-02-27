@@ -6,11 +6,13 @@ mae(shmi, anakin).
 mae(jobal, padme).
 mae(padme, leia).
 mae(padme, luke).
+mae(leia, ben_solo).
 
 pai(cliegg, anakin).
 pai(ruweee, padme).
 pai(anakin, luke).
 pai(anakin, leia).
+pai(han_solo, ben_solo).
 
 casal(cliegg, shmi).
 casal(ruweee, jobal).

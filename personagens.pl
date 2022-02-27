@@ -5,6 +5,7 @@ luke('Luke Skywalker').
 yoda('Mestre Yoda').
 palpatine('Palpatine').
 han_solo('Han Solo').
+ben_solo('Ben Solo').
 chewbacca('Chewbacca').
 dookan('Conde Dookan').
 darth_tyranus('Darth Tyranus').
@@ -42,3 +43,37 @@ watto('Watto').
 jobal('Jobal Naberrie').
 ruweee('Ruweee Naberrie').
 cliegg('Cliegg Lars').
+darth_bane('Darth Bane').
+darth_krayt('Darth Krayt').
+darth_malak('Darth Malak').
+darth_caedus('Dart Caedus').
+darth_andeddu('Darth Andeddu').
+darth_cognus('Darth Cognus').
+darth_badon('Darth Badon').
+darth_nihilus('Darth Nihilus').
+darth_ruin('Darth Ruin').
+mara_jade('Mara Jade Skywalker').
+kit_fisto('Kit Fisto').
+luminara('Luminara Unduli').
+ki_adi('Ki-Adi-Mundi').
+shaak_ti('Shaak Ti').
+plo_koon('Plo Koon').
+koth('Eeth Koth')
+paratus('Kazdan Paratus').
+poof('Yarael Poof').
+seasee('Saesee Tiin').
+bane('Cad Bane').
+din('Din djarin').
+gogru('Gogru').
+cara_dune('Cara Dune').
+paz_vizla('Paz Vizla').
+fennec('Fennec Shand').
+fortuna('Bib Fortuna').
+boba('Boba Fett').
+bo_katan('Bo-Katan Kryze').
+jango('Jango Fett').
+kanata('Maz Kanata').
+krrsantan('Krrsantan').
+kylo_ren('Kylo Ren').
+kylo_ren(ben_solo).
+darth_revan('Darth Revan').
