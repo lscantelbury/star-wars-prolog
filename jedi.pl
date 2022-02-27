@@ -21,3 +21,4 @@ jedi(poof).
 jedi(seasee).
 jedi(ben_solo).
 jedi(rey).
+jedi(aayla).

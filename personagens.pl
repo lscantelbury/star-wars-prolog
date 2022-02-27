@@ -18,6 +18,7 @@ rey('Rey Skywalker').
 ben('Ben Solo').
 kylo('Kylo Ren').
 mesmaPessoa(ben, kylo).
+mesmaPessoa(anakin, darth_vader).
 ahsoka('Ahsoka Tano').
 darth_sidious('Darth Sidious').
 r2d2('R2-D2').
@@ -28,6 +29,7 @@ darth_maul('Darth Maul').
 poe('Poe Dameron').
 jabba('Jabba the Hutt').
 baby_yoda('Baby Yoda').
+mesmaPessoa(gogru, baby_yoda).
 phasma('Capitã Phasma').
 ackbar('Almirante Ackbar').
 bb8('BB-8').
@@ -74,6 +76,8 @@ bo_katan('Bo-Katan Kryze').
 jango('Jango Fett').
 kanata('Maz Kanata').
 krrsantan('Krrsantan').
-kylo_ren('Kylo Ren').
-kylo_ren(ben_solo).
 darth_revan('Darth Revan').
+jyn('Jyn Erso').
+sabine('Sabine Wren').
+aayla('Aayla Secura').
+satine('Satine Kryze').
