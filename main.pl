@@ -1,15 +1,12 @@
-:- include('personagens.pl').
-:- [sith].
-:- [jedi].
-:- [homens].
-:- [mulheres].
-:- [parentes].
+:- [personagens].
 
 buscar_personagem(Entrada, Saida) :-
 	read(Entrada),
 	write(Saida).
 
 parentesco(X, Y) :-
+	(filho(X,Y),write(X),write(' é filho de '), write(Y));
+	(filha(X,Y),write(X),write(' é filha de '), write(Y));
 	(irmao(X,Y),write(X),write(' é irmão de '), write(Y));
 	(irma(X,Y),write(X),write(' é irmã de '), write(Y));
 	(tio(X,Y), write(X), write(' é tio de'), write(Y));
