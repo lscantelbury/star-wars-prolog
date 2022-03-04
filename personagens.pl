@@ -216,3 +216,32 @@ filha(X, Y) :- (pai(Y, X);mae(Y, X)), mulher(X).
 
 tia(X,Y) :-(pai(Z,Y); mae(Z,Y)), irma(Z,X).
 tio(X,Y) :-(pai(Z,Y); mae(Z,Y)), irmao(Z,X).
+
+frase(yoda, 'Muitas das verdades que temos dependem do nosso ponto de vista.').
+frase(yoda,'Que a forca esteja com voce!').
+frase(yoda,'O medo e o caminho para o lado negro.').
+frase(yoda,'Treine a si mesmo a deixar partir tudo que teme perder').
+frase(yoda,'Faca ou nao faça. A tentativa nao existe').
+frase(yoda,'Melhor professor, o fracasso e.').
+frase(yoda,'Dificil de ver. Sempre em movimento está o Futuro').
+frase(yoda,'O lado negro nao e mais poderoso, apenas mais rápido, mais fácil e mais sedutor').
+frase(yoda,'A morte e parte natural da Vida. Regozije-se por aqueles que se uniram com a Forca. Nao lamente por eles. Nao sinta falta deles. O apego leva à inveja. À sombra da cobiça, isso sim.').
+frase(obi_wan,'Voce faz aquilo que voce acha que tem que fazer.').
+frase(obi_wan,'Que a Forca esteja com voce').
+frase(obi_wan,'Qyem e mais tolo?O tolo, ou o tolo que o segue?').
+frase(obi_wan,'Esteja consciente de seus pensamentos, Eles traem voce').
+frase(obi_wan,'Com o tempo aprenderás a confiar em teus instintos, entao serás invencivel!').
+frase(obi_wan,'Nao pode ganhar. Mas existem outras formas de lutar').
+frase(obi_wan,'Nao deixe seus sentimentos pessoais atrapalaharem seu caminho.').
+frase(obi_wan,'A Forca pode ter firme influencia sobre mentes fracas.').
+frase(obi_wan,'Voce nao pode fugir de seu destino.').
+frase(obi_wan,'A Forca estará com voce, sempre').
+frase(obi_wan,'Os sonhos passam com o tempo.').
+frase(anakin,'Agora a diversao vai comecar.').
+frase(darth_vader,'Sua falta de fe e perturbadora.').
+frase(darth_vader,'Voce nao conhece o poder do lado sombrio.').
+
+quem_disse :-
+	read(Entrada),
+	frase(Pessoa, Entrada),
+	write(Pessoa).
