@@ -174,6 +174,11 @@ jedi(shaak_ti).
 jedi(windu).
 jedi(yoda).
 
+master(yoda, luke).
+master(anakin, ahsoka).
+master(obi_wan, luke).
+master(qui_gon, obi_wan).
+
 darth(dart_caedus).
 darth(dart_nihilus).
 darth(dart_ruin).
