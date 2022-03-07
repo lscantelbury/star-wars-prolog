@@ -85,71 +85,71 @@ wicket('Wicket W. Warrick').
 windu('Mace Windu').
 yoda('Mestre Yoda').
 
-homem(anakin).
-homem(bane).
-homem(beckett).
-homem(ben).
-homem(ben_solo).
-homem(boba).
-homem(chewbacca).
-homem(cliegg).
-homem(darth_andeddu).
-homem(darth_badon).
-homem(darth_bane).
-homem(darth_caedus).
-homem(darth_krayt).
-homem(darth_maul).
-homem(darth_nihilus).
-homem(darth_revan).
-homem(darth_sidious).
-homem(darth_tyranus).
-homem(din).
-homem(dookan).
-homem(finis).
-homem(finis).
-homem(finn).
-homem(fortuna).
-homem(han_solo).
-homem(hux).
-homem(jango).
-homem(krrsantan).
-homem(kylo).
-homem(kylo_ren).
-homem(lando).
-homem(luke).
-homem(obi_wan).
-homem(palpatine).
-homem(paratus).
-homem(paz_vizla).
-homem(piett).
-homem(plo_koon).
-homem(poe).
-homem(qui_gon).
-homem(ruweee).
-homem(tarkin).
-homem(windu).
-homem(yoda).
+man(anakin).
+man(bane).
+man(beckett).
+man(ben).
+man(ben_solo).
+man(boba).
+man(chewbacca).
+man(cliegg).
+man(darth_andeddu).
+man(darth_badon).
+man(darth_bane).
+man(darth_caedus).
+man(darth_krayt).
+man(darth_maul).
+man(darth_nihilus).
+man(darth_revan).
+man(darth_sidious).
+man(darth_tyranus).
+man(din).
+man(dookan).
+man(finis).
+man(finis).
+man(finn).
+man(fortuna).
+man(han_solo).
+man(hux).
+man(jango).
+man(krrsantan).
+man(kylo).
+man(kylo_ren).
+man(lando).
+man(luke).
+man(obi_wan).
+man(palpatine).
+man(paratus).
+man(paz_vizla).
+man(piett).
+man(plo_koon).
+man(poe).
+man(qui_gon).
+man(ruweee).
+man(tarkin).
+man(windu).
+man(yoda).
 
-mulher(aayla).
-mulher(ahsoka).
-mulher(bo_katan).
-mulher(cara_dune).
-mulher(fennec).
-mulher(jobal).
-mulher(jyn).
-mulher(kanata).
-mulher(leia).
-mulher(luminara).
-mulher(mara_jade).
-mulher(padme).
-mulher(phasma).
-mulher(rey).
-mulher(rose).
-mulher(sabine).
-mulher(satine).
-mulher(shaak_ti).
-mulher(shmi).
-mulher(qira).
+woman(aayla).
+woman(ahsoka).
+woman(bo_katan).
+woman(cara_dune).
+woman(fennec).
+woman(jobal).
+woman(jyn).
+woman(kanata).
+woman(leia).
+woman(luminara).
+woman(mara_jade).
+woman(padme).
+woman(phasma).
+woman(rey).
+woman(rose).
+woman(sabine).
+woman(satine).
+woman(shaak_ti).
+woman(shmi).
+woman(qira).
 
 jedi(aayla).
 jedi(ahsoka).
@@ -179,9 +179,9 @@ master(anakin, ahsoka).
 master(obi_wan, luke).
 master(qui_gon, obi_wan).
 
-darth(dart_caedus).
-darth(dart_nihilus).
-darth(dart_ruin).
+darth(darth_caedus).
+darth(darth_nihilus).
+darth(darth_ruin).
 darth(darth_andeddu).
 darth(darth_badon).
 darth(darth_bane).
@@ -195,125 +195,125 @@ darth(darth_tyranus).
 darth(darth_vader).
 darth(kylo_ren).
 
-avo(X,Y) :- (pai(P,Y); mae(P,Y)), pai(X,P).
-avoh(X,Y) :- (mae(M,Y); pai(M,Y)), mae(X,M).
+grandfather(X,Y) :- (father(P,Y); mother(P,Y)), father(X,P).
+grandmother(X,Y) :- (mother(M,Y); father(M,Y)), mother(X,M).
 
-casal(anakin,padme).
-casal(cliegg,shmi).
-casal(han_solo,leia).
-casal(ruweee,jobal).
+couple(anakin,padme).
+couple(cliegg,shmi).
+couple(han_solo,leia).
+couple(ruweee,jobal).
 
-irma(X,Y) :- irmaos(X,Y), mulher(X).
-irmao(X,Y) :- irmaos(X,Y), homem(X).
-irmaos(X,Y) :- pai(Z,X), pai(Z,Y), mae(M,X), mae(M,Y), X \= Y.
+sister(X,Y) :- brothers(X,Y), woman(X).
+brother(X,Y) :- brothers(X,Y), man(X).
+brothers(X,Y) :- father(Z,X), father(Z,Y), mother(M,X), mother(M,Y), X \= Y.
 
-mae(jobal,padme).
-mae(leia,ben_solo).
-mae(padme,leia).
-mae(padme,luke).
-mae(shmi,anakin).
+mother(jobal,padme).
+mother(leia,ben_solo).
+mother(padme,leia).
+mother(padme,luke).
+mother(shmi,anakin).
 
-pai(anakin,leia).
-pai(anakin,luke).
-pai(cliegg,anakin).
-pai(han_solo,ben_solo).
-pai(ruweee,padme).
+father(anakin,leia).
+father(anakin,luke).
+father(cliegg,anakin).
+father(han_solo,ben_solo).
+father(ruweee,padme).
 
-filho(X, Y) :- (pai(Y, X);mae(Y, X)), homem(X).
-filha(X, Y) :- (pai(Y, X);mae(Y, X)), mulher(X).
+son(X, Y) :- (father(Y, X);mother(Y, X)), man(X).
+daughter(X, Y) :- (father(Y, X);mother(Y, X)), woman(X).
 
-tia(X,Y) :-(pai(Z,Y); mae(Z,Y)), irma(Z,X).
-tio(X,Y) :-(pai(Z,Y); mae(Z,Y)), irmao(Z,X).
+tia(X,Y) :-(father(Z,Y); mother(Z,Y)), sister(Z,X).
+uncle(X,Y) :-(father(Z,Y); mother(Z,Y)), brother(Z,X).
 
-frase(yoda, 'Muitas das verdades que temos dependem do nosso ponto de vista.').
-frase(yoda,'Que a forca esteja com voce!').
-frase(yoda,'O medo e o caminho para o lado negro.').
-frase(yoda,'Treine a si mesmo a deixar partir tudo que teme perder').
-frase(yoda,'Faca ou nao faça. A tentativa nao existe').
-frase(yoda,'Melhor professor, o fracasso e.').
-frase(yoda, 'Muito a aprender você ainda tem').
-frase(yoda, 'Medo é caminho para o lado sombrio.').
-frase(yoda, 'Grande guerreiro? Guerra não faz grande ninguém.').
-frase(yoda, 'Transmita o que aprendeu. Força, mestria. Mas fraqueza, insensatez, fracasso também. Sim, fracasso acima de tudo. O maior professor, o fracasso é. Luke, nós somos o que eles crescem além. Esse é o verdadeiro fardo de todos os mestres.').
-frase(yoda,'Dificil de ver. Sempre em movimento está o Futuro').
-frase(yoda,'O lado negro nao e mais poderoso, apenas mais rápido, mais fácil e mais sedutor').
-frase(yoda,'A morte e parte natural da Vida. Regozije-se por aqueles que se uniram com a Forca. Nao lamente por eles. Nao sinta falta deles. O apego leva à inveja. À sombra da cobiça, isso sim.').
-frase(obi_wan,'Voce faz aquilo que voce acha que tem que fazer.').
-frase(obi_wan,'Que a Forca esteja com voce').
-frase(obi_wan,'Quem e mais tolo?O tolo, ou o tolo que o segue?').
-frase(obi_wan,'Esteja consciente de seus pensamentos, Eles traem voce').
-frase(obi_wan,'Com o tempo aprenderás a confiar em teus instintos, entao serás invencivel!').
-frase(obi_wan,'Nao pode ganhar. Mas existem outras formas de lutar').
-frase(obi_wan,'Nao deixe seus sentimentos pessoais atrapalaharem seu caminho.').
-frase(obi_wan,'A Forca pode ter firme influencia sobre mentes fracas.').
-frase(obi_wan,'Voce nao pode fugir de seu destino.').
-frase(obi_wan,'A Forca estará com voce, sempre').
-frase(obi_wan,'Os sonhos passam com o tempo.').
-frase(obi_wan, 'Você não pode ganhar, Darth. Me ataca e eu vou me tornar mais poderoso do que você poderia imaginar.').
-frase(obi_wan, 'Use a Força, Luke.').
-frase(obi_wan, 'Você foi o escolhido! Foi dito que você iria destruir os Sith, não se juntar a eles! Você deveria ter trazido equilíbrio à Força, não deixá-la na escuridão.').
-frase(obi_wan, 'Se você não está comigo, então é meu inimigo').
-frase(obi_wan, 'Estes não são os dróides que você está procurando.').
-frase(anakin,'Agora a diversao vai comecar.').
-frase(darth_maul, 'Capacidade de falar não é sinal de inteligência!').
-frase(darth_vader,'Sua falta de fe e perturbadora.').
-frase(darth_vader,'Voce nao conhece o poder do lado sombrio.').
-frase(darth_vader, 'Luke, eu sou seu pai.').
-frase(darth_vader, 'Eu estava esperando por você, Obi-Wan. Finalmente, nós nos encontramos de novo. O círculo está agora completo. Quando o deixei, eu era só o aprendiz; agora eu sou o mestre.').
-frase(darth_vader, 'Derrote-me e eu me tornarei mais poderoso do que você jamais teria imaginado.').
-frase(darth_vader, 'Luke, você pode destruir o Imperador. Ele previu isso. É o seu destino. Junte-se a mim, e juntos podemos governar a galáxia como pai e filho.').
-frase(djarin, 'Como deve ser').
-frase(paz_vizla, 'Como deve ser').
-frase(boba, 'Jabba governou com o medo, eu governarei com respeito').
-frase(djarin, 'Em nome da Honra').
-frase(luke, 'Não tente, faça.').
-frase(luke, 'A Força é forte em minha família. Meu pai a tem, eu a tenho e minha irmã a tem. Sim. É você, Leia.').
-frase(luke, 'A rebelião renasce hoje. A guerra está apenas começando e eu não serei o último Jedi.').
-frase(palpatine, 'O lado negro da Força é o caminho para muitas habilidades que alguns consideram ser ... Antinatural.').
-frase(padme, 'Então é assim que a liberdade morre, com um estrondoso aplauso.').
-frase(padme, 'Estar com raiva é próprio do ser humano.').
-frase(padme, 'E se a democracia que pensávamos estar servindo já não existe, ea República tornou-se o mal que temos lutado para destruir?').
-frase(leia, 'Seus olhos podem trair você, não confie neles.').
-frase(leia, 'Ajude-me, Obi-Wan Kenobi. Você é minha única esperança.').
-frase(leia, 'Eu sempre odiei ver você partir').
-frase(leia, 'Não é baixinho demais para Stormtrooper?').
-frase(leia, 'Você veio naquela coisa? Você é mais corajoso do que eu pensava.').
-frase(rose, 'É assim que vamos ganhar. Não lutando contra o que odiamos, mas salvando o que amamos.').
-frase(han_solo, 'Eu tenho um mal pressentimento sobre isso.').
-frase(han_solo, 'Nunca me diga as probabilidades.').
-frase(han_solo, 'Eu sei.').
-frase(han_solo, 'Viajar pelo hiperespaço não é igual passear pelo parquinho não, garoto.').
-frase(han_solo, 'Chewie, estamos em casa…').
-frase(han_solo, 'Não é assim que a Força funciona!').
-frase(han_solo, 'Eu vou ser piloto. O melhor da galáxia').
-frase(han_solo, 'Nessas ruas perigosas, um jovem luta pela sobrevivência, mas anseia por voar entre as estrelas.').
-frase(han_solo, 'Você diz a eles que Han Solo roubou a Millennium Falcon de vez!').
-frase(beckett, 'Vou te dar um conselho: suponha que todo mundo vai te trair e você nunca ficará desapontado. ').
-frase(beckett, 'Ei, garoto, tem um grande bandido montando uma equipe.').
-frase(qira, 'Você está atrás de algo. É vingança? Dinheiro? Ou é outra coisa?').
-frase(qui_gon, 'Lembre-se: seu foco determina a sua realidade.').
-frase(c3po, 'Olá. Eu não acredito que fomos apresentados. R2-D2? Prazer em conhecê-lo. Sou C-3PO, Relações Humano-Ciborgue.').
-frase(c3po, 'Eu sugiro uma nova estratégia, R2: deixe o Wookie ganhar.').
-frase(kylo, 'Mostre-me outra vez, avô, e eu terminarei o que você começou.').
-frase(kylo, 'Han Solo. Você sente que ele é o pai que você nunca teve. Ele teria decepcionado você.').
-frase(kylo, 'Eu estou despedaçado. Eu quero estar livre dessa dor.').
-frase(kylo, 'Deixe o passado morrer. Mate-o, se for preciso. É o único jeito de cumprir o seu destino.').
-frase(kanata, 'Se você viver tempo suficiente, você vê os mesmos olhos em pessoas diferentes.').
-frase(rey, 'Eu sei como correr sem você segurando minha mão!').
-frase(rey, 'Você vai remover estas restrições e vai deixar essa cela com a porta aberta.').
-frase(rey, 'Você. Você está com medo. Que você nunca vai ser tão forte quanto Darth Vader.').
-frase(finn, 'Eu não sou Resistência. Eu não sou um herói. Eu sou um stormtrooper. Como todos eles, fui tirado de uma família que nunca conhecerei. E criado para fazer uma coisa. Mas na minha primeira batalha, eu fiz uma escolha. Eu năo ia matar por eles. Então eu corri. Direito a você. E você olhou para mim como ninguém nunca antes tinha feito. Eu estava envergonhado do que eu era. Mas eu terminei com a Primeira Ordem. Eu nunca irei voltar. Rey, venha comigo.').
-frase(poe, 'Somos a faísca que acenderá a chama que destruirá a Primeira Ordem.').
-frase(chewbacca, 'RRRAARRWHHGWWR').
-frase(chewbacca, 'RWGWGWARAHHHHWWRGGWRWRW').
-frase(chewbacca, 'WWWRRRRRRGWWWRRRR').
-frase(chewbacca, 'RRWWWGG').
-frase(chewbacca, 'WAGRRRRWWGAHHHHWWWRRGGAWWWWWWRR').
-frase(lando, 'Tudo o que você ouviu sobre mim é verdade').
+quote(yoda, 'Muitas das verdades que temos dependem do nosso ponto de vista.').
+quote(yoda,'Que a forca esteja com voce!').
+quote(yoda,'O medo e o caminho para o lado negro.').
+quote(yoda,'Treine a si mesmo a deixar partir tudo que teme perder').
+quote(yoda,'Faca ou nao faca. A tentativa nao existe').
+quote(yoda,'Melhor professor, o fracasso e.').
+quote(yoda, 'Muito a aprender voce ainda tem').
+quote(yoda, 'Medo e caminho para o lado sombrio.').
+quote(yoda, 'Grande guerreiro? Guerra nao faz grande ninguem.').
+quote(yoda, 'Transmita o que aprendeu. Forca, mestria. Mas fraqueza, insensatez, fracasso tambem. Sim, fracasso acima de tudo. O maior professor, o fracasso e. Luke, nos somos o que eles crescem alem. Esse e o verdadeiro fardo de todos os mestres.').
+quote(yoda,'Dificil de ver. Sempre em movimento esta o Futuro').
+quote(yoda,'O lado negro nao e mais poderoso, apenas mais rapido, mais facil e mais sedutor').
+quote(yoda,'A morte e parte natural da Vida. Regozije-se por aqueles que se uniram com a Forca. Nao lamente por eles. Nao sinta falta deles. O apego leva a inveja. À sombra da cobica, isso sim.').
+quote(obi_wan,'Voce faz aquilo que voce acha que tem que fazer.').
+quote(obi_wan,'Que a Forca esteja com voce').
+quote(obi_wan,'Quem e mais tolo?O tolo, ou o tolo que o segue?').
+quote(obi_wan,'Esteja consciente de seus pensamentos, Eles traem voce').
+quote(obi_wan,'Com o tempo aprenderas a confiar em teus instintos, entao seras invencivel!').
+quote(obi_wan,'Nao pode ganhar. Mas existem outras formas de lutar').
+quote(obi_wan,'Nao deixe seus sentimentos pessoais atrapalaharem seu caminho.').
+quote(obi_wan,'A Forca pode ter firme influencia sobre mentes fracas.').
+quote(obi_wan,'Voce nao pode fugir de seu destino.').
+quote(obi_wan,'A Forca estara com voce, sempre').
+quote(obi_wan,'Os sonhos passam com o tempo.').
+quote(obi_wan, 'Voce nao pode ganhar, Darth. Me ataca e eu vou me tornar mais poderoso do que voce poderia imaginar.').
+quote(obi_wan, 'Use a Forca, Luke.').
+quote(obi_wan, 'Voce foi o escolhido! Foi dito que voce iria destruir os Sith, nao se juntar a eles! Voce deveria ter trazido equilibrio a Forca, nao deixa-la na escuridao.').
+quote(obi_wan, 'Se voce nao esta comigo, entao e meu inimigo').
+quote(obi_wan, 'Estes nao sao os droides que voce esta procurando.').
+quote(anakin,'Agora a diversao vai comecar.').
+quote(darth_maul, 'Capacidade de falar nao e sinal de inteligencia!').
+quote(darth_vader,'Sua falta de fe e perturbadora.').
+quote(darth_vader,'Voce nao conhece o poder do lado sombrio.').
+quote(darth_vader, 'Luke, eu sou seu father.').
+quote(darth_vader, 'Eu estava esperando por voce, Obi-Wan. Finalmente, nos nos encontramos de novo. O circulo esta agora completo. Quando o deixei, eu era so o aprendiz; agora eu sou o mestre.').
+quote(darth_vader, 'Derrote-me e eu me tornarei mais poderoso do que voce jamais teria imaginado.').
+quote(darth_vader, 'Luke, voce pode destruir o Imperador. Ele previu isso. É o seu destino. Junte-se a mim, e juntos podemos governar a galaxia como father e son.').
+quote(djarin, 'Como deve ser').
+quote(paz_vizla, 'Como deve ser').
+quote(boba, 'Jabba governou com o medo, eu governarei com respeito').
+quote(djarin, 'Em nome da Honra').
+quote(luke, 'Nao tente, faca.').
+quote(luke, 'A Forca e forte em minha familia. Meu father a tem, eu a tenho e minha irma a tem. Sim. É voce, Leia.').
+quote(luke, 'A rebeliao renasce hoje. A guerra esta apenas comecando e eu nao serei o ultimo Jedi.').
+quote(palpatine, 'O lado negro da Forca e o caminho para muitas habilidades que alguns consideram ser ... Antinatural.').
+quote(padme, 'Entao e assim que a liberdade morre, com um estrondoso aplauso.').
+quote(padme, 'Estar com raiva e proprio do ser humano.').
+quote(padme, 'E se a democracia que pensavamos estar servindo ja nao existe, ea Republica tornou-se o mal que temos lutado para destruir?').
+quote(leia, 'Seus olhos podem trair voce, nao confie neles.').
+quote(leia, 'Ajude-me, Obi-Wan Kenobi. Voce e minha unica esperanca.').
+quote(leia, 'Eu sempre odiei ver voce partir').
+quote(leia, 'Nao e baixinho demais para Stormtrooper?').
+quote(leia, 'Voce veio naquela coisa? Voce e mais corajoso do que eu pensava.').
+quote(rose, 'É assim que vamos ganhar. Nao lutando contra o que odiamos, mas salvando o que amamos.').
+quote(han_solo, 'Eu tenho um mal pressentimento sobre isso.').
+quote(han_solo, 'Nunca me diga as probabilidades.').
+quote(han_solo, 'Eu sei.').
+quote(han_solo, 'Viajar pelo hiperespaco nao e igual passear pelo parquinho nao, garoto.').
+quote(han_solo, 'Chewie, estamos em casa…').
+quote(han_solo, 'Nao e assim que a Forca funciona!').
+quote(han_solo, 'Eu vou ser piloto. O melhor da galaxia').
+quote(han_solo, 'Nessas ruas perigosas, um jovem luta pela sobrevivencia, mas anseia por voar entre as estrelas.').
+quote(han_solo, 'Voce diz a eles que Han Solo roubou a Millennium Falcon de vez!').
+quote(beckett, 'Vou te dar um conselho: suponha que todo mundo vai te trair e voce nunca ficara desapontado. ').
+quote(beckett, 'Ei, garoto, tem um grande bandido montando uma equipe.').
+quote(qira, 'Voce esta atras de algo. É vinganca? Dinheiro? Ou e outra coisa?').
+quote(qui_gon, 'Lembre-se: seu foco determina a sua realidade.').
+quote(c3po, 'Ola. Eu nao acredito que fomos apresentados. R2-D2? Prazer em conhece-lo. Sou C-3PO, Relacoes Humano-Ciborgue.').
+quote(c3po, 'Eu sugiro uma nova estrategia, R2: deixe o Wookie ganhar.').
+quote(kylo, 'Mostre-me outra vez, avo, e eu terminarei o que voce comecou.').
+quote(kylo, 'Han Solo. Voce sente que ele e o father que voce nunca teve. Ele teria decepcionado voce.').
+quote(kylo, 'Eu estou despedacado. Eu quero estar livre dessa dor.').
+quote(kylo, 'Deixe o passado morrer. Mate-o, se for preciso. É o unico jeito de cumprir o seu destino.').
+quote(kanata, 'Se voce viver tempo suficiente, voce ve os mesmos olhos em pessoas diferentes.').
+quote(rey, 'Eu sei como correr sem voce segurando minha mao!').
+quote(rey, 'Voce vai remover estas restricoes e vai deixar essa cela com a porta aberta.').
+quote(rey, 'Voce. Voce esta com medo. Que voce nunca vai ser tao forte quanto Darth Vader.').
+quote(finn, 'Eu nao sou Resistencia. Eu nao sou um heroi. Eu sou um stormtrooper. Como todos eles, fui tirado de uma familia que nunca conhecerei. E criado para fazer uma coisa. Mas na minha primeira batalha, eu fiz uma escolha. Eu nao ia matar por eles. Entao eu corri. Direito a voce. E voce olhou para mim como ninguem nunca antes tinha feito. Eu estava envergonhado do que eu era. Mas eu terminei com a Primeira Ordem. Eu nunca irei voltar. Rey, venha comigo.').
+quote(poe, 'Somos a faisca que acendera a chama que destruira a Primeira Ordem.').
+quote(chewbacca, 'RRRAARRWHHGWWR').
+quote(chewbacca, 'RWGWGWARAHHHHWWRGGWRWRW').
+quote(chewbacca, 'WWWRRRRRRGWWWRRRR').
+quote(chewbacca, 'RRWWWGG').
+quote(chewbacca, 'WAGRRRRWWGAHHHHWWWRRGGAWWWWWWRR').
+quote(lando, 'Tudo o que voce ouviu sobre mim e verdade').
 
 quem_disse :-
 	read(Entrada),
-	frase(Pessoa, Entrada),
+	quote(Pessoa, Entrada),
 	write(Pessoa).
 
 buscar_personagem(Entrada, Saida) :-
@@ -321,13 +321,13 @@ buscar_personagem(Entrada, Saida) :-
 	write(Saida).
 
 parentesco(X, Y) :-
-	(filho(X,Y),write(X),write(' é filho de '), write(Y));
-	(filha(X,Y),write(X),write(' é filha de '), write(Y));
-	(irmao(X,Y),write(X),write(' é irmão de '), write(Y));
-	(irma(X,Y),write(X),write(' é irmã de '), write(Y));
-	(tio(X,Y), write(X), write(' é tio de'), write(Y));
-	(mae(X,Y), write(X), write(' é mãe de '), write(Y));
-	(pai(X,Y), write(X), write(' é pai de '), write(Y));
-	(avo(X,Y), write(X), write(' é avô de '), write(Y));
-	(avoh(X,Y), write(X), write(' é avó de '), write(Y)).
+	(son(X,Y),write(X),write(' e son de '), write(Y));
+	(daughter(X,Y),write(X),write(' e daughter de '), write(Y));
+	(brother(X,Y),write(X),write(' e irmao de '), write(Y));
+	(sister(X,Y),write(X),write(' e irma de '), write(Y));
+	(uncle(X,Y), write(X), write(' e uncle de'), write(Y));
+	(mother(X,Y), write(X), write(' e mae de '), write(Y));
+	(father(X,Y), write(X), write(' e father de '), write(Y));
+	(grandfather(X,Y), write(X), write(' e avo de '), write(Y));
+	(grandmother(X,Y), write(X), write(' e avo de '), write(Y)).
 
