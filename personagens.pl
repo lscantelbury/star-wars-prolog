@@ -205,7 +205,7 @@ couple(ruweee,jobal).
 
 sister(X,Y) :- brothers(X,Y), woman(X).
 brother(X,Y) :- brothers(X,Y), man(X).
-brothers(X,Y) :- father(Z,X), father(Z,Y), mother(M,X), mother(M,Y), X \= Y.
+siblings(X,Y) :- father(Z,X), father(Z,Y), mother(M,X), mother(M,Y), X \= Y.
 
 mother(jobal,padme).
 mother(leia,ben_solo).
@@ -222,7 +222,7 @@ father(ruweee,padme).
 son(X, Y) :- (father(Y, X);mother(Y, X)), man(X).
 daughter(X, Y) :- (father(Y, X);mother(Y, X)), woman(X).
 
-tia(X,Y) :-(father(Z,Y); mother(Z,Y)), sister(Z,X).
+aunt(X,Y) :-(father(Z,Y); mother(Z,Y)), sister(Z,X).
 uncle(X,Y) :-(father(Z,Y); mother(Z,Y)), brother(Z,X).
 
 quote(yoda, 'Muitas das verdades que temos dependem do nosso ponto de vista.').
@@ -316,11 +316,7 @@ quem_disse :-
 	quote(Pessoa, Entrada),
 	write(Pessoa).
 
-buscar_personagem(Entrada, Saida) :-
-	read(Entrada),
-	write(Saida).
-
-parentesco(X, Y) :-
+relationship(X, Y) :-
 	(son(X,Y),write(X),write(' e son de '), write(Y));
 	(daughter(X,Y),write(X),write(' e daughter de '), write(Y));
 	(brother(X,Y),write(X),write(' e irmao de '), write(Y));
